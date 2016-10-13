@@ -382,9 +382,12 @@
             // 
             // tabla_usuario
             // 
+            this.tabla_usuario.AllowUserToAddRows = false;
+            this.tabla_usuario.AllowUserToDeleteRows = false;
             this.tabla_usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_usuario.Location = new System.Drawing.Point(7, 59);
             this.tabla_usuario.Name = "tabla_usuario";
+            this.tabla_usuario.ReadOnly = true;
             this.tabla_usuario.Size = new System.Drawing.Size(712, 315);
             this.tabla_usuario.TabIndex = 9;
             // 

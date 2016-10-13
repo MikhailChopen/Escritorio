@@ -84,18 +84,22 @@ namespace Escritorio
             List<string> Lista = ServerCS.Leer_Usuarios();
             tabla_usuario.ColumnCount = 3;
             tabla_usuario.Columns[0].Name = "Carnet";
-            tabla_usuario.Columns[0].Name = "Nombre";
-            tabla_usuario.Columns[0].Name = "Apellido";
+            tabla_usuario.Columns[0].Width = 223;
+            tabla_usuario.Columns[1].Name = "Nombre";
+            tabla_usuario.Columns[1].Width = 223;
+            tabla_usuario.Columns[2].Name = "Apellido";
+            tabla_usuario.Columns[2].Width = 223;
 
             tabla_usuario.Rows.Clear();
 
-            int cantidad = Lista.Count()/3;
+            int cantidad = Lista.Count();
             int i=0;
             while(i<cantidad)
             {
                 string[] row = new string[] { Lista[i], Lista[i+1], Lista[i+2] };
                 tabla_usuario.Rows.Add(row);
-                i = i + 3;
+                i = i+3;
+
             }
 
             tabla_usuario.Refresh();
