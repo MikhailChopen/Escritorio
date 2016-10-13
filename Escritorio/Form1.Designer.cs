@@ -49,35 +49,52 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.mensaje = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.u_carnet = new System.Windows.Forms.TextBox();
+            this.u_nombre = new System.Windows.Forms.TextBox();
+            this.u_apellido = new System.Windows.Forms.TextBox();
             this.u_crear = new System.Windows.Forms.Button();
             this.u_eliminar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.u_actualizar = new System.Windows.Forms.Button();
             this.tabla_usuario = new System.Windows.Forms.DataGridView();
+            this.p_id = new System.Windows.Forms.TextBox();
+            this.p_pedido = new System.Windows.Forms.TextBox();
+            this.p_cantidad = new System.Windows.Forms.TextBox();
+            this.p_carnet = new System.Windows.Forms.TextBox();
+            this.refrescar = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.p_crear = new System.Windows.Forms.Button();
+            this.p_eliminar = new System.Windows.Forms.Button();
+            this.p_actualizar = new System.Windows.Forms.Button();
+            this.p_refrescar = new System.Windows.Forms.Button();
+            this.tabla_pedidos = new System.Windows.Forms.DataGridView();
             this.usuarios.SuspendLayout();
             this.sesion.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.pedidos.SuspendLayout();
             this.sesion_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_usuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_pedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // usuarios
             // 
+            this.usuarios.Controls.Add(this.refrescar);
             this.usuarios.Controls.Add(this.tabla_usuario);
-            this.usuarios.Controls.Add(this.button2);
+            this.usuarios.Controls.Add(this.u_actualizar);
             this.usuarios.Controls.Add(this.label11);
             this.usuarios.Controls.Add(this.label10);
             this.usuarios.Controls.Add(this.label9);
             this.usuarios.Controls.Add(this.u_eliminar);
             this.usuarios.Controls.Add(this.u_crear);
-            this.usuarios.Controls.Add(this.textBox3);
-            this.usuarios.Controls.Add(this.textBox2);
-            this.usuarios.Controls.Add(this.textBox1);
+            this.usuarios.Controls.Add(this.u_apellido);
+            this.usuarios.Controls.Add(this.u_nombre);
+            this.usuarios.Controls.Add(this.u_carnet);
             this.usuarios.Location = new System.Drawing.Point(4, 22);
             this.usuarios.Name = "usuarios";
             this.usuarios.Padding = new System.Windows.Forms.Padding(3);
@@ -173,6 +190,19 @@
             // 
             // pedidos
             // 
+            this.pedidos.Controls.Add(this.tabla_pedidos);
+            this.pedidos.Controls.Add(this.p_refrescar);
+            this.pedidos.Controls.Add(this.p_actualizar);
+            this.pedidos.Controls.Add(this.p_eliminar);
+            this.pedidos.Controls.Add(this.p_crear);
+            this.pedidos.Controls.Add(this.label15);
+            this.pedidos.Controls.Add(this.label14);
+            this.pedidos.Controls.Add(this.label13);
+            this.pedidos.Controls.Add(this.label12);
+            this.pedidos.Controls.Add(this.p_carnet);
+            this.pedidos.Controls.Add(this.p_cantidad);
+            this.pedidos.Controls.Add(this.p_pedido);
+            this.pedidos.Controls.Add(this.p_id);
             this.pedidos.Location = new System.Drawing.Point(4, 22);
             this.pedidos.Name = "pedidos";
             this.pedidos.Size = new System.Drawing.Size(737, 382);
@@ -299,26 +329,26 @@
             this.mensaje.Size = new System.Drawing.Size(0, 24);
             this.mensaje.TabIndex = 6;
             // 
-            // textBox1
+            // u_carnet
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 20);
-            this.textBox1.TabIndex = 0;
+            this.u_carnet.Location = new System.Drawing.Point(7, 33);
+            this.u_carnet.Name = "u_carnet";
+            this.u_carnet.Size = new System.Drawing.Size(157, 20);
+            this.u_carnet.TabIndex = 0;
             // 
-            // textBox2
+            // u_nombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(154, 20);
-            this.textBox2.TabIndex = 1;
+            this.u_nombre.Location = new System.Drawing.Point(170, 33);
+            this.u_nombre.Name = "u_nombre";
+            this.u_nombre.Size = new System.Drawing.Size(154, 20);
+            this.u_nombre.TabIndex = 1;
             // 
-            // textBox3
+            // u_apellido
             // 
-            this.textBox3.Location = new System.Drawing.Point(330, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 20);
-            this.textBox3.TabIndex = 2;
+            this.u_apellido.Location = new System.Drawing.Point(330, 32);
+            this.u_apellido.Name = "u_apellido";
+            this.u_apellido.Size = new System.Drawing.Size(146, 20);
+            this.u_apellido.TabIndex = 2;
             // 
             // u_crear
             // 
@@ -329,6 +359,7 @@
             this.u_crear.TabIndex = 3;
             this.u_crear.Text = "Crear";
             this.u_crear.UseVisualStyleBackColor = true;
+            this.u_crear.Click += new System.EventHandler(this.u_crear_Click);
             // 
             // u_eliminar
             // 
@@ -339,6 +370,7 @@
             this.u_eliminar.TabIndex = 4;
             this.u_eliminar.Text = "Eliminar";
             this.u_eliminar.UseVisualStyleBackColor = true;
+            this.u_eliminar.Click += new System.EventHandler(this.u_eliminar_Click);
             // 
             // label9
             // 
@@ -370,15 +402,16 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "Apellido";
             // 
-            // button2
+            // u_actualizar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(644, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Actualizar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.u_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.u_actualizar.Location = new System.Drawing.Point(644, 29);
+            this.u_actualizar.Name = "u_actualizar";
+            this.u_actualizar.Size = new System.Drawing.Size(75, 23);
+            this.u_actualizar.TabIndex = 8;
+            this.u_actualizar.Text = "Actualizar";
+            this.u_actualizar.UseVisualStyleBackColor = true;
+            this.u_actualizar.Click += new System.EventHandler(this.u_actualizar_Click);
             // 
             // tabla_usuario
             // 
@@ -390,6 +423,136 @@
             this.tabla_usuario.ReadOnly = true;
             this.tabla_usuario.Size = new System.Drawing.Size(712, 315);
             this.tabla_usuario.TabIndex = 9;
+            // 
+            // p_id
+            // 
+            this.p_id.Location = new System.Drawing.Point(7, 27);
+            this.p_id.Name = "p_id";
+            this.p_id.Size = new System.Drawing.Size(169, 20);
+            this.p_id.TabIndex = 0;
+            // 
+            // p_pedido
+            // 
+            this.p_pedido.Location = new System.Drawing.Point(182, 27);
+            this.p_pedido.Name = "p_pedido";
+            this.p_pedido.Size = new System.Drawing.Size(186, 20);
+            this.p_pedido.TabIndex = 1;
+            // 
+            // p_cantidad
+            // 
+            this.p_cantidad.Location = new System.Drawing.Point(374, 27);
+            this.p_cantidad.Name = "p_cantidad";
+            this.p_cantidad.Size = new System.Drawing.Size(178, 20);
+            this.p_cantidad.TabIndex = 2;
+            // 
+            // p_carnet
+            // 
+            this.p_carnet.Location = new System.Drawing.Point(558, 27);
+            this.p_carnet.Name = "p_carnet";
+            this.p_carnet.Size = new System.Drawing.Size(169, 20);
+            this.p_carnet.TabIndex = 3;
+            // 
+            // refrescar
+            // 
+            this.refrescar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refrescar.Location = new System.Drawing.Point(482, 3);
+            this.refrescar.Name = "refrescar";
+            this.refrescar.Size = new System.Drawing.Size(237, 23);
+            this.refrescar.TabIndex = 10;
+            this.refrescar.Text = "Actualizar Tabla De Usuarios";
+            this.refrescar.UseVisualStyleBackColor = true;
+            this.refrescar.Click += new System.EventHandler(this.refrescar_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(60, 4);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 20);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Id Pedido";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(247, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 20);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Pedido";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(428, 4);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(81, 20);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Cantidad";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(612, 4);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 20);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Carnet";
+            // 
+            // p_crear
+            // 
+            this.p_crear.Location = new System.Drawing.Point(8, 54);
+            this.p_crear.Name = "p_crear";
+            this.p_crear.Size = new System.Drawing.Size(168, 23);
+            this.p_crear.TabIndex = 8;
+            this.p_crear.Text = "Crear";
+            this.p_crear.UseVisualStyleBackColor = true;
+            this.p_crear.Click += new System.EventHandler(this.p_crear_Click);
+            // 
+            // p_eliminar
+            // 
+            this.p_eliminar.Location = new System.Drawing.Point(182, 54);
+            this.p_eliminar.Name = "p_eliminar";
+            this.p_eliminar.Size = new System.Drawing.Size(186, 23);
+            this.p_eliminar.TabIndex = 9;
+            this.p_eliminar.Text = "Eliminar";
+            this.p_eliminar.UseVisualStyleBackColor = true;
+            this.p_eliminar.Click += new System.EventHandler(this.p_eliminar_Click);
+            // 
+            // p_actualizar
+            // 
+            this.p_actualizar.Location = new System.Drawing.Point(374, 54);
+            this.p_actualizar.Name = "p_actualizar";
+            this.p_actualizar.Size = new System.Drawing.Size(178, 23);
+            this.p_actualizar.TabIndex = 10;
+            this.p_actualizar.Text = "Actualizar";
+            this.p_actualizar.UseVisualStyleBackColor = true;
+            this.p_actualizar.Click += new System.EventHandler(this.p_actualizar_Click);
+            // 
+            // p_refrescar
+            // 
+            this.p_refrescar.Location = new System.Drawing.Point(558, 54);
+            this.p_refrescar.Name = "p_refrescar";
+            this.p_refrescar.Size = new System.Drawing.Size(168, 23);
+            this.p_refrescar.TabIndex = 11;
+            this.p_refrescar.Text = "Actualizar Tabla De Pedidos";
+            this.p_refrescar.UseVisualStyleBackColor = true;
+            this.p_refrescar.Click += new System.EventHandler(this.p_refrescar_Click);
+            // 
+            // tabla_pedidos
+            // 
+            this.tabla_pedidos.AllowUserToAddRows = false;
+            this.tabla_pedidos.AllowUserToDeleteRows = false;
+            this.tabla_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_pedidos.Location = new System.Drawing.Point(8, 83);
+            this.tabla_pedidos.Name = "tabla_pedidos";
+            this.tabla_pedidos.ReadOnly = true;
+            this.tabla_pedidos.Size = new System.Drawing.Size(718, 291);
+            this.tabla_pedidos.TabIndex = 12;
             // 
             // Form1
             // 
@@ -404,9 +567,12 @@
             this.sesion.ResumeLayout(false);
             this.sesion.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.pedidos.ResumeLayout(false);
+            this.pedidos.PerformLayout();
             this.sesion_info.ResumeLayout(false);
             this.sesion_info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_usuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_pedidos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,15 +601,29 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label mensaje;
         private System.Windows.Forms.DataGridView tabla_usuario;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button u_actualizar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button u_eliminar;
         private System.Windows.Forms.Button u_crear;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox u_apellido;
+        private System.Windows.Forms.TextBox u_nombre;
+        private System.Windows.Forms.TextBox u_carnet;
+        private System.Windows.Forms.Button refrescar;
+        private System.Windows.Forms.TextBox p_carnet;
+        private System.Windows.Forms.TextBox p_cantidad;
+        private System.Windows.Forms.TextBox p_pedido;
+        private System.Windows.Forms.TextBox p_id;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView tabla_pedidos;
+        private System.Windows.Forms.Button p_refrescar;
+        private System.Windows.Forms.Button p_actualizar;
+        private System.Windows.Forms.Button p_eliminar;
+        private System.Windows.Forms.Button p_crear;
 
     }
 }

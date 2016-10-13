@@ -22,6 +22,7 @@ namespace Escritorio
             pedidos.Parent = null;
             sesion_info.Parent = null;
             llenar_usuarios();
+            llenar_pedidos();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,8 +80,7 @@ namespace Escritorio
 
         public void llenar_usuarios() 
         {
-
-
+            
             List<string> Lista = ServerCS.Leer_Usuarios();
             tabla_usuario.ColumnCount = 3;
             tabla_usuario.Columns[0].Name = "Carnet";
@@ -106,6 +106,115 @@ namespace Escritorio
 
         }
 
+        private void u_crear_Click(object sender, EventArgs e)
+        {
+           ServerCS.Crear_Usuario(Int32.Parse(u_carnet.Text),u_nombre.Text,u_apellido.Text);
+           llenar_usuarios();
+           u_carnet.Text = "";
+           u_nombre.Text = "";
+           u_apellido.Text = "";
+
+        }
+
+        private void u_eliminar_Click(object sender, EventArgs e)
+        {
+            ServerCS.Eliminar_Usuario(Int32.Parse(u_carnet.Text));
+            llenar_usuarios();
+            u_carnet.Text = "";
+            u_nombre.Text = "";
+            u_apellido.Text = "";
+        }
+
+        private void u_actualizar_Click(object sender, EventArgs e)
+        {
+            ServerCS.Actualizar_Usuario(Int32.Parse(u_carnet.Text), u_nombre.Text, u_apellido.Text);
+            llenar_usuarios();
+            u_carnet.Text = "";
+            u_nombre.Text = "";
+            u_apellido.Text = "";
+        }
+
+        private void refrescar_Click(object sender, EventArgs e)
+        {
+            llenar_usuarios();
+        }
+
+
+
+
+
+        public void llenar_pedidos()
+        {
+
+            List<string> Lista = ServerCS.Leer_pedidos();
+            tabla_pedidos.ColumnCount = 4;
+            tabla_pedidos.Columns[0].Name = "Id Pedido";
+            tabla_pedidos.Columns[0].Width = 168;
+            tabla_pedidos.Columns[1].Name = "Pedido";
+            tabla_pedidos.Columns[1].Width = 168;
+            tabla_pedidos.Columns[2].Name = "Cantidad";
+            tabla_pedidos.Columns[2].Width = 169;
+            tabla_pedidos.Columns[3].Name = "Carnet";
+            tabla_pedidos.Columns[3].Width = 170;
+
+            tabla_pedidos.Rows.Clear();
+
+            int cantidad = Lista.Count();
+            int i = 0;
+            while (i < cantidad)
+            {
+                string[] row = new string[] { Lista[i], Lista[i + 1], Lista[i + 2], Lista[i + 3] };
+                tabla_pedidos.Rows.Add(row);
+                i = i + 4;
+
+            }
+
+            tabla_pedidos.Refresh();
+
+        }
+
         
+        private void p_crear_Click(object sender, EventArgs e)
+        {
+            ServerCS.Crear_Pedido(p_pedido.Text, Int32.Parse(p_cantidad.Text), Int32.Parse(p_carnet.Text));
+            llenar_pedidos();
+            p_id.Text = "";
+            p_pedido.Text = "";
+            p_cantidad.Text = "";
+            p_carnet.Text = "";
+        }
+
+        private void p_eliminar_Click(object sender, EventArgs e)
+        {
+            ServerCS.Eliminar_pedido(Int32.Parse(p_id.Text));
+            llenar_pedidos();
+            p_id.Text = "";
+            p_pedido.Text = "";
+            p_cantidad.Text = "";
+            p_carnet.Text = "";
+        }
+
+        private void p_actualizar_Click(object sender, EventArgs e)
+        {
+            ServerCS.Actualizar_Pedido(Int32.Parse(p_id.Text),p_pedido.Text, Int32.Parse(p_cantidad.Text), Int32.Parse(p_carnet.Text));
+            llenar_pedidos();
+            p_id.Text = "";
+            p_pedido.Text = "";
+            p_cantidad.Text = "";
+            p_carnet.Text = "";
+        }
+
+        private void p_refrescar_Click(object sender, EventArgs e)
+        {
+            llenar_pedidos();
+        }
+
+
+
+
+        
+
+
+
     }
 }
